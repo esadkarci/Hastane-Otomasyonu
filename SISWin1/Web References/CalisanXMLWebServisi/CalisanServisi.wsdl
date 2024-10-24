@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="KullaniciGirisiniDogrula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ePosta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parola" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KullaniciGirisiniDogrulaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KullaniciGirisiniDogrulaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalisanGetir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="calisanNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalisanGetirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalisanGetirResult" type="tns:Calisan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Calisan">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Kisi">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Unvan" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Parola" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CalisanTipi" type="tns:CalisanTipleri" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Kisi">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="No" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TCKimlikNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Soyad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Eposta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CepTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EvTel" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="CalisanTipleri">
+        <s:restriction base="s:string">
+          <s:enumeration value="SistemYoneticisi" />
+          <s:enumeration value="Sekreter" />
+          <s:enumeration value="Uzman" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="parolaDegistir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="calisanNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="yeniParola" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="parolaDegistirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="parolaDegistirResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="parolaSifirla">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ePosta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parola" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="parolaSifirlaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="parolaSifirlaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Kaydet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="calisan" type="tns:Calisan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KaydetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KaydetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalisanlariListele">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalisanlariListeleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalisanlariListeleResult" type="tns:ArrayOfCalisan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCalisan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Calisan" nillable="true" type="tns:Calisan" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UzmanlariListele">
+        <s:complexType />
+      </s:element>
+      <s:element name="UzmanlariListeleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UzmanlariListeleResult" type="tns:ArrayOfCalisan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="KullaniciGirisiniDogrulaSoapIn">
+    <wsdl:part name="parameters" element="tns:KullaniciGirisiniDogrula" />
+  </wsdl:message>
+  <wsdl:message name="KullaniciGirisiniDogrulaSoapOut">
+    <wsdl:part name="parameters" element="tns:KullaniciGirisiniDogrulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalisanGetirSoapIn">
+    <wsdl:part name="parameters" element="tns:CalisanGetir" />
+  </wsdl:message>
+  <wsdl:message name="CalisanGetirSoapOut">
+    <wsdl:part name="parameters" element="tns:CalisanGetirResponse" />
+  </wsdl:message>
+  <wsdl:message name="parolaDegistirSoapIn">
+    <wsdl:part name="parameters" element="tns:parolaDegistir" />
+  </wsdl:message>
+  <wsdl:message name="parolaDegistirSoapOut">
+    <wsdl:part name="parameters" element="tns:parolaDegistirResponse" />
+  </wsdl:message>
+  <wsdl:message name="parolaSifirlaSoapIn">
+    <wsdl:part name="parameters" element="tns:parolaSifirla" />
+  </wsdl:message>
+  <wsdl:message name="parolaSifirlaSoapOut">
+    <wsdl:part name="parameters" element="tns:parolaSifirlaResponse" />
+  </wsdl:message>
+  <wsdl:message name="KaydetSoapIn">
+    <wsdl:part name="parameters" element="tns:Kaydet" />
+  </wsdl:message>
+  <wsdl:message name="KaydetSoapOut">
+    <wsdl:part name="parameters" element="tns:KaydetResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalisanlariListeleSoapIn">
+    <wsdl:part name="parameters" element="tns:CalisanlariListele" />
+  </wsdl:message>
+  <wsdl:message name="CalisanlariListeleSoapOut">
+    <wsdl:part name="parameters" element="tns:CalisanlariListeleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UzmanlariListeleSoapIn">
+    <wsdl:part name="parameters" element="tns:UzmanlariListele" />
+  </wsdl:message>
+  <wsdl:message name="UzmanlariListeleSoapOut">
+    <wsdl:part name="parameters" element="tns:UzmanlariListeleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CalisanServisiSoap">
+    <wsdl:operation name="KullaniciGirisiniDogrula">
+      <wsdl:input message="tns:KullaniciGirisiniDogrulaSoapIn" />
+      <wsdl:output message="tns:KullaniciGirisiniDogrulaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalisanGetir">
+      <wsdl:input message="tns:CalisanGetirSoapIn" />
+      <wsdl:output message="tns:CalisanGetirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parolaDegistir">
+      <wsdl:input message="tns:parolaDegistirSoapIn" />
+      <wsdl:output message="tns:parolaDegistirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="parolaSifirla">
+      <wsdl:input message="tns:parolaSifirlaSoapIn" />
+      <wsdl:output message="tns:parolaSifirlaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Kaydet">
+      <wsdl:input message="tns:KaydetSoapIn" />
+      <wsdl:output message="tns:KaydetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalisanlariListele">
+      <wsdl:input message="tns:CalisanlariListeleSoapIn" />
+      <wsdl:output message="tns:CalisanlariListeleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UzmanlariListele">
+      <wsdl:input message="tns:UzmanlariListeleSoapIn" />
+      <wsdl:output message="tns:UzmanlariListeleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalisanServisiSoap" type="tns:CalisanServisiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="KullaniciGirisiniDogrula">
+      <soap:operation soapAction="http://tempuri.org/KullaniciGirisiniDogrula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalisanGetir">
+      <soap:operation soapAction="http://tempuri.org/CalisanGetir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parolaDegistir">
+      <soap:operation soapAction="http://tempuri.org/parolaDegistir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parolaSifirla">
+      <soap:operation soapAction="http://tempuri.org/parolaSifirla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Kaydet">
+      <soap:operation soapAction="http://tempuri.org/Kaydet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalisanlariListele">
+      <soap:operation soapAction="http://tempuri.org/CalisanlariListele" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UzmanlariListele">
+      <soap:operation soapAction="http://tempuri.org/UzmanlariListele" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalisanServisiSoap12" type="tns:CalisanServisiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="KullaniciGirisiniDogrula">
+      <soap12:operation soapAction="http://tempuri.org/KullaniciGirisiniDogrula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalisanGetir">
+      <soap12:operation soapAction="http://tempuri.org/CalisanGetir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parolaDegistir">
+      <soap12:operation soapAction="http://tempuri.org/parolaDegistir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parolaSifirla">
+      <soap12:operation soapAction="http://tempuri.org/parolaSifirla" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Kaydet">
+      <soap12:operation soapAction="http://tempuri.org/Kaydet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalisanlariListele">
+      <soap12:operation soapAction="http://tempuri.org/CalisanlariListele" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UzmanlariListele">
+      <soap12:operation soapAction="http://tempuri.org/UzmanlariListele" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalisanServisi">
+    <wsdl:port name="CalisanServisiSoap" binding="tns:CalisanServisiSoap">
+      <soap:address location="https://localhost:44394/CalisanServisi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalisanServisiSoap12" binding="tns:CalisanServisiSoap12">
+      <soap12:address location="https://localhost:44394/CalisanServisi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

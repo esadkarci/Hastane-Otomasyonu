@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SISWin1.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SISWin1_SeansXMLWebServisi_SeansServisi" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44394/SeansServisi.asmx</Value>
+    </Setting>
+    <Setting Name="SISWin1_CalisanXMLWebServisi_CalisanServisi" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44394/CalisanServisi.asmx</Value>
+    </Setting>
+    <Setting Name="SISWin1_HastaXMLWebServisi_HastaServisi" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44394/HastaServisi.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{882B7C54-EE62-4542-8FBC-B45A0A7670DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SISWin1</RootNamespace>
+    <AssemblyName>SISWin1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormAnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnaSayfa.Designer.cs">
+      <DependentUpon>FormAnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCalisanAra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCalisanAra.Designer.cs">
+      <DependentUpon>FormCalisanAra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiris.Designer.cs">
+      <DependentUpon>FormGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHastaBilgisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHastaBilgisi.Designer.cs">
+      <DependentUpon>FormHastaBilgisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHastaRandevuYonet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHastaRandevuYonet.Designer.cs">
+      <DependentUpon>FormHastaRandevuYonet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormParolaDegistir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormParolaDegistir.Designer.cs">
+      <DependentUpon>FormParolaDegistir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormParolaSıfırlamaEkranı.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormParolaSıfırlamaEkranı.Designer.cs">
+      <DependentUpon>FormParolaSıfırlamaEkranı.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRandevuKayıt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRandevuKayıt.Designer.cs">
+      <DependentUpon>FormRandevuKayıt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSeansIptalEt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSeansIptalEt.Designer.cs">
+      <DependentUpon>FormSeansIptalEt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSeansYönetimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSeansYönetimi.Designer.cs">
+      <DependentUpon>FormSeansYönetimi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSekreterBilgisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSekreterBilgisi.Designer.cs">
+      <DependentUpon>FormSekreterBilgisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUzmanBilgisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUzmanBilgisi.Designer.cs">
+      <DependentUpon>FormUzmanBilgisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUzmanSeansYonetimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUzmanSeansYonetimi.Designer.cs">
+      <DependentUpon>FormUzmanSeansYonetimi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormYeniSeans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormYeniSeans.Designer.cs">
+      <DependentUpon>FormYeniSeans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web References\CalisanXMLWebServisi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\HastaXMLWebServisi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SeansXMLWebServisi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Yardimci.cs" />
+    <EmbeddedResource Include="FormAnaSayfa.resx">
+      <DependentUpon>FormAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCalisanAra.resx">
+      <DependentUpon>FormCalisanAra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiris.resx">
+      <DependentUpon>FormGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHastaBilgisi.resx">
+      <DependentUpon>FormHastaBilgisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHastaRandevuYonet.resx">
+      <DependentUpon>FormHastaRandevuYonet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormParolaDegistir.resx">
+      <DependentUpon>FormParolaDegistir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormParolaSıfırlamaEkranı.resx">
+      <DependentUpon>FormParolaSıfırlamaEkranı.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRandevuKayıt.resx">
+      <DependentUpon>FormRandevuKayıt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSeansIptalEt.resx">
+      <DependentUpon>FormSeansIptalEt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSeansYönetimi.resx">
+      <DependentUpon>FormSeansYönetimi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSekreterBilgisi.resx">
+      <DependentUpon>FormSekreterBilgisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUzmanBilgisi.resx">
+      <DependentUpon>FormUzmanBilgisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUzmanSeansYonetimi.resx">
+      <DependentUpon>FormUzmanSeansYonetimi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormYeniSeans.resx">
+      <DependentUpon>FormYeniSeans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\CalisanXMLWebServisi\Calisan.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CalisanXMLWebServisi\CalisanServisi.wsdl" />
+    <None Include="Web References\CalisanXMLWebServisi\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\HastaXMLWebServisi\Hasta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\HastaXMLWebServisi\HastaServisi.wsdl" />
+    <None Include="Web References\HastaXMLWebServisi\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SeansXMLWebServisi\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SeansXMLWebServisi\Seans.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SeansXMLWebServisi\SeansServisi.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-directory-icon-computer-file-folder-miscellaneous-angle-image-file-formats.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bbbbbbbbbbbbbbb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-user-profile-avatar-urban-scholars-program-avatar-cdr-heroes-monochrome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aaaaaaaaaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-user-profile-avatar-profile-heroes-profile-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-user-profile-avatar-profile-heroes-profile-user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bbbbbbbbbbbbbbb1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\welcome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ccccccccccccc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dddddddddddddddd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ggggggggggggg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hjhjhjh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop-wallpaper-png-stickers-background-light-blue-sky.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://localhost:44394/CalisanServisi.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CalisanXMLWebServisi\</RelPath>
+      <UpdateFromURL>https://localhost:44394/CalisanServisi.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SISWin1_CalisanXMLWebServisi_CalisanServisi</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://localhost:44394/HastaServisi.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\HastaXMLWebServisi\</RelPath>
+      <UpdateFromURL>https://localhost:44394/HastaServisi.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SISWin1_HastaXMLWebServisi_HastaServisi</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://localhost:44394/SeansServisi.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SeansXMLWebServisi\</RelPath>
+      <UpdateFromURL>https://localhost:44394/SeansServisi.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SISWin1_SeansXMLWebServisi_SeansServisi</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SeansXMLWebServisi\SeansServisi.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\CalisanXMLWebServisi\CalisanServisi.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\HastaXMLWebServisi\HastaServisi.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

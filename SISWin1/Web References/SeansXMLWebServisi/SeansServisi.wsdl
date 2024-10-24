@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Kaydet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="seans" type="tns:Seans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Seans">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="No" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UzmanNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HastaNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tarih" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaslangicSaati" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BitisSaati" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SeansNotu" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IptalEdenNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IptalNotu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HastaBilgisi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UzmanBilgisi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SeansYapildi" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HastaIptalEtti" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="KaydetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KaydetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UzmanSeanslariniListele">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="uzmanNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UzmanSeanslariniListeleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UzmanSeanslariniListeleResult" type="tns:ArrayOfSeans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSeans">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Seans" nillable="true" type="tns:Seans" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IptalEt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="seans" type="tns:Seans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IptalEtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IptalEtResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SonSeansBilgisiGetir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="hastaNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SonSeansBilgisiGetirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SonSeansBilgisiGetirResult" type="tns:Seans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SonRandevuBilgisiGetir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="hastaNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SonRandevuBilgisiGetirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SonRandevuBilgisiGetirResult" type="tns:Seans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RandevuKaydet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="seansNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="hastaNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RandevuKaydetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RandevuKaydetResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RandevuIptalEt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="seansNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RandevuIptalEtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RandevuIptalEtResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HastaSeanslariniListele">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="hastaNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HastaSeanslariniListeleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HastaSeanslariniListeleResult" type="tns:ArrayOfSeans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotGuncelle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="seansNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="seansNotu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotGuncelleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NotGuncelleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="KaydetSoapIn">
+    <wsdl:part name="parameters" element="tns:Kaydet" />
+  </wsdl:message>
+  <wsdl:message name="KaydetSoapOut">
+    <wsdl:part name="parameters" element="tns:KaydetResponse" />
+  </wsdl:message>
+  <wsdl:message name="UzmanSeanslariniListeleSoapIn">
+    <wsdl:part name="parameters" element="tns:UzmanSeanslariniListele" />
+  </wsdl:message>
+  <wsdl:message name="UzmanSeanslariniListeleSoapOut">
+    <wsdl:part name="parameters" element="tns:UzmanSeanslariniListeleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IptalEtSoapIn">
+    <wsdl:part name="parameters" element="tns:IptalEt" />
+  </wsdl:message>
+  <wsdl:message name="IptalEtSoapOut">
+    <wsdl:part name="parameters" element="tns:IptalEtResponse" />
+  </wsdl:message>
+  <wsdl:message name="SonSeansBilgisiGetirSoapIn">
+    <wsdl:part name="parameters" element="tns:SonSeansBilgisiGetir" />
+  </wsdl:message>
+  <wsdl:message name="SonSeansBilgisiGetirSoapOut">
+    <wsdl:part name="parameters" element="tns:SonSeansBilgisiGetirResponse" />
+  </wsdl:message>
+  <wsdl:message name="SonRandevuBilgisiGetirSoapIn">
+    <wsdl:part name="parameters" element="tns:SonRandevuBilgisiGetir" />
+  </wsdl:message>
+  <wsdl:message name="SonRandevuBilgisiGetirSoapOut">
+    <wsdl:part name="parameters" element="tns:SonRandevuBilgisiGetirResponse" />
+  </wsdl:message>
+  <wsdl:message name="RandevuKaydetSoapIn">
+    <wsdl:part name="parameters" element="tns:RandevuKaydet" />
+  </wsdl:message>
+  <wsdl:message name="RandevuKaydetSoapOut">
+    <wsdl:part name="parameters" element="tns:RandevuKaydetResponse" />
+  </wsdl:message>
+  <wsdl:message name="RandevuIptalEtSoapIn">
+    <wsdl:part name="parameters" element="tns:RandevuIptalEt" />
+  </wsdl:message>
+  <wsdl:message name="RandevuIptalEtSoapOut">
+    <wsdl:part name="parameters" element="tns:RandevuIptalEtResponse" />
+  </wsdl:message>
+  <wsdl:message name="HastaSeanslariniListeleSoapIn">
+    <wsdl:part name="parameters" element="tns:HastaSeanslariniListele" />
+  </wsdl:message>
+  <wsdl:message name="HastaSeanslariniListeleSoapOut">
+    <wsdl:part name="parameters" element="tns:HastaSeanslariniListeleResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotGuncelleSoapIn">
+    <wsdl:part name="parameters" element="tns:NotGuncelle" />
+  </wsdl:message>
+  <wsdl:message name="NotGuncelleSoapOut">
+    <wsdl:part name="parameters" element="tns:NotGuncelleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SeansServisiSoap">
+    <wsdl:operation name="Kaydet">
+      <wsdl:input message="tns:KaydetSoapIn" />
+      <wsdl:output message="tns:KaydetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UzmanSeanslariniListele">
+      <wsdl:input message="tns:UzmanSeanslariniListeleSoapIn" />
+      <wsdl:output message="tns:UzmanSeanslariniListeleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IptalEt">
+      <wsdl:input message="tns:IptalEtSoapIn" />
+      <wsdl:output message="tns:IptalEtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SonSeansBilgisiGetir">
+      <wsdl:input message="tns:SonSeansBilgisiGetirSoapIn" />
+      <wsdl:output message="tns:SonSeansBilgisiGetirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SonRandevuBilgisiGetir">
+      <wsdl:input message="tns:SonRandevuBilgisiGetirSoapIn" />
+      <wsdl:output message="tns:SonRandevuBilgisiGetirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RandevuKaydet">
+      <wsdl:input message="tns:RandevuKaydetSoapIn" />
+      <wsdl:output message="tns:RandevuKaydetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RandevuIptalEt">
+      <wsdl:input message="tns:RandevuIptalEtSoapIn" />
+      <wsdl:output message="tns:RandevuIptalEtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HastaSeanslariniListele">
+      <wsdl:input message="tns:HastaSeanslariniListeleSoapIn" />
+      <wsdl:output message="tns:HastaSeanslariniListeleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotGuncelle">
+      <wsdl:input message="tns:NotGuncelleSoapIn" />
+      <wsdl:output message="tns:NotGuncelleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SeansServisiSoap" type="tns:SeansServisiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Kaydet">
+      <soap:operation soapAction="http://tempuri.org/Kaydet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UzmanSeanslariniListele">
+      <soap:operation soapAction="http://tempuri.org/UzmanSeanslariniListele" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IptalEt">
+      <soap:operation soapAction="http://tempuri.org/IptalEt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SonSeansBilgisiGetir">
+      <soap:operation soapAction="http://tempuri.org/SonSeansBilgisiGetir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SonRandevuBilgisiGetir">
+      <soap:operation soapAction="http://tempuri.org/SonRandevuBilgisiGetir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RandevuKaydet">
+      <soap:operation soapAction="http://tempuri.org/RandevuKaydet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RandevuIptalEt">
+      <soap:operation soapAction="http://tempuri.org/RandevuIptalEt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HastaSeanslariniListele">
+      <soap:operation soapAction="http://tempuri.org/HastaSeanslariniListele" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotGuncelle">
+      <soap:operation soapAction="http://tempuri.org/NotGuncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SeansServisiSoap12" type="tns:SeansServisiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Kaydet">
+      <soap12:operation soapAction="http://tempuri.org/Kaydet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UzmanSeanslariniListele">
+      <soap12:operation soapAction="http://tempuri.org/UzmanSeanslariniListele" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IptalEt">
+      <soap12:operation soapAction="http://tempuri.org/IptalEt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SonSeansBilgisiGetir">
+      <soap12:operation soapAction="http://tempuri.org/SonSeansBilgisiGetir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SonRandevuBilgisiGetir">
+      <soap12:operation soapAction="http://tempuri.org/SonRandevuBilgisiGetir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RandevuKaydet">
+      <soap12:operation soapAction="http://tempuri.org/RandevuKaydet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RandevuIptalEt">
+      <soap12:operation soapAction="http://tempuri.org/RandevuIptalEt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HastaSeanslariniListele">
+      <soap12:operation soapAction="http://tempuri.org/HastaSeanslariniListele" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotGuncelle">
+      <soap12:operation soapAction="http://tempuri.org/NotGuncelle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SeansServisi">
+    <wsdl:port name="SeansServisiSoap" binding="tns:SeansServisiSoap">
+      <soap:address location="https://localhost:44394/SeansServisi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SeansServisiSoap12" binding="tns:SeansServisiSoap12">
+      <soap12:address location="https://localhost:44394/SeansServisi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
